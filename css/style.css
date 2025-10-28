@@ -305,6 +305,7 @@ body {
 
     .container-fluid {
         margin-top: -15px;
+        padding-top:20px;
     }
 }
 
@@ -397,7 +398,7 @@ body {
 
 /*** Carousel Hero Header Start ***/
 .hero-section {
-    background-image: url(../img/bg1.png);
+    background-image: url(../img/bg2.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -549,11 +550,11 @@ body {
 .bg-breadcrumb {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/banner-img.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/bg3.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 60px 0 60px 0;
+    padding: 160px 0 60px 0;
     transition: 0.5s;
 }
 

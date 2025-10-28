@@ -27,6 +27,35 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <style>
+            .whatsapp-float,
+            .back-to-top {
+                position: fixed !important;
+                z-index: 99999;
+                will-change: transform;
+                transform: translateZ(0);
+                -webkit-transform: translateZ(0);
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
+            }
+
+            .whatsapp-float {
+                bottom: 80px;
+                right: 20px;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            @media (max-width: 768px) {
+                .wow {
+                    animation-name: none !important;
+                    visibility: visible !important;
+                }
+            }
+        </style>
     </head>
 
     <body class="aurora-bg">
@@ -104,7 +133,7 @@
                 <div class="hero-bg-half-1"></div>
 
                 <div class="carousel-caption">
-                    <div class="container">
+                    <div class="container" style="margin-top: 20px;">
                         <div class="row g-4 align-items-center">
                             <div class="col-lg-7 animated fadeInLeft">
                                 <div class="text-sm-center text-md-start">
@@ -126,12 +155,12 @@
                 <div class="hero-bg-half-2"></div>
    
                 <div class="carousel-caption">
-                    <div class="container">
+                    <div class="container" style="margin-top: 20px;">
                         <div class="row g-4 align-items-center">
                             <div class="col-lg-7 animated fadeInLeft">
-                                <div class="text-sm-center text-md-start">
+                                <div class="text-center text-md-start">
                                     <h4 class="text-white text-uppercase fw-bold mb-4" style="margin-top: 50px;">Shri Bhagwati Poly Pack</h4>
-                                    <h1 class="display-2 text-white mb-4" style="width: 120%;">Smart, Strong, Sustainable Packaging</h1>
+                                    <h1 class="display-2 text-white mb-4" style="width: auto;">Smart, Strong, Sustainable Packaging</h1>
                                     <p class="mb-5 fs-5">Delivering high-quality, custom-designed solutions using advanced Rotogravure printing technology for industries like Food & Beverages, Confectionery, Pet Care, Sports Nutrition, Non-food, and Construction. 
                                     </p>
                                     <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
@@ -980,6 +1009,12 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script>
+            new WOW({
+                mobile: false,  // Disable WOW.js on mobile devices
+                live: false    // Disable live mutations
+            }).init();
+        </script>
     </body>
 
 </html>

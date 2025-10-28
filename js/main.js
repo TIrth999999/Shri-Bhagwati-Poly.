@@ -18,19 +18,17 @@
 
     // Header carousel
     $(".header-carousel").owlCarousel({
-        animateOut: 'fadeOut',
-        items: 1,
-        margin: 0,
-        stagePadding: 0,
         autoplay: true,
-        smartSpeed: 1000,
-        dots: false,
+        smartSpeed: 1500,
+        items: 1,
+        dots: true,
         loop: true,
-        nav : true,
-        navText : [
-            '<i class="bi bi-arrow-left"></i>',
-            '<i class="bi bi-arrow-right"></i>'
+        nav: true,
+        navText: [
+            '<i class="bi bi-chevron-left"></i>',
+            '<i class="bi bi-chevron-right"></i>'
         ],
+        autoplayTimeout: 10000, // Changed from default to 10 seconds
     });
 
 
@@ -105,13 +103,14 @@
    // Back to top button
    $(window).scroll(function () {
     if ($(this).scrollTop() > 300) {
-        $('.back-to-top').fadeIn('slow');
+        $('.back-to-top').fadeIn('fast');
     } else {
-        $('.back-to-top').fadeOut('slow');
+        $('.back-to-top').fadeOut('fast');
     }
     });
-    $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+    $('.back-to-top').click(function (e) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop : 0}, 300, 'easeInOutExpo');
         return false;
     });
 
