@@ -25,20 +25,12 @@
         loop: false,
         nav: false,
         autoplayTimeout: 10000,
-        mouseDrag: false,
-        touchDrag: false,
-        pullDrag: false,
+        mouseDrag: true,
+        touchDrag: true,
+        pullDrag: true,
         freeDrag: false,
         rewind: false,
         autoplayHoverPause: true
-    });
-    
-    // Prevent default touch actions that could cause dragging
-    $(".header-carousel").on('touchstart touchmove', function(e) {
-        if (e.type === 'touchstart' || e.type === 'touchmove') {
-            e.preventDefault();
-            e.stopPropagation();
-        }
     });
 
 

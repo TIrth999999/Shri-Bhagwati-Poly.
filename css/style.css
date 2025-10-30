@@ -461,7 +461,8 @@ body {
     background-position: center center;
     background-size: cover;
     width: 100%;
-    height: 700px;
+    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
@@ -483,6 +484,7 @@ background: linear-gradient(to right,
   rgba(0, 0, 0, 0) 100%);
 
     z-index: 1;
+    pointer-events: none;
 }
 
 /* Mobile overlay - stronger gradient for better text readability */
@@ -567,7 +569,8 @@ background: linear-gradient(to right,
 
 /*** Carousel Hero Header Start ***/
 .header-carousel .header-carousel-item {
-    height: 740px;
+    min-height: 100vh;
+    height: 100vh;
 }
 
 .header-carousel .owl-nav .owl-prev,
@@ -609,11 +612,15 @@ background: linear-gradient(to right,
     height: 100%;
     left: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, .2);
+    background: transparent;
     display: flex;
     align-items: center;
     z-index: 10;
+    pointer-events: none;
+}
 
+.header-carousel .header-carousel-item .carousel-caption * {
+    pointer-events: auto;
 }
 
 /* .header-carousel .header-carousel-item .carousel-caption::before {
@@ -638,7 +645,13 @@ background: linear-gradient(to right,
 
     .header-carousel.owl-carousel,
     .header-carousel .header-carousel-item {
-        height: 700px;
+        min-height: 100vh;
+        height: 100vh;
+    }
+    
+    .hero-section {
+        min-height: 100vh;
+        height: 100vh;
     }
     
     .hero-section .carousel-caption .container {
@@ -650,7 +663,13 @@ background: linear-gradient(to right,
 @media (max-width: 575px) {
     .header-carousel.owl-carousel,
     .header-carousel .header-carousel-item {
-        height: 700px;
+        min-height: 100vh;
+        height: 100vh;
+    }
+    
+    .hero-section {
+        min-height: 100vh;
+        height: 100vh;
     }
     
     .header-carousel .header-carousel-item .carousel-caption {
