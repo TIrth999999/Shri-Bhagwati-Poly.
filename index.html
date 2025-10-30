@@ -55,6 +55,84 @@
                     visibility: visible !important;
                 }
             }
+            
+            /* Slight font adjustment for 390px width */
+            @media (max-width: 390px) {
+                .hero-section .carousel-caption h4 {
+                    font-size: 1.15rem !important;
+                }
+                
+                .hero-section .carousel-caption h1 {
+                    font-size: 2rem !important;
+                }
+                
+                .hero-section .carousel-caption p {
+                    font-size: 1rem !important;
+                }
+            }
+            
+            /* Mobile navbar styling */
+            @media (max-width: 991px) {
+                .navbar-collapse {
+                    background-color: white !important;
+                    padding: 1rem;
+                    border-radius: 10px;
+                    margin-top: 10px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+                
+                .navbar-collapse .nav-link,
+                .navbar-collapse .dropdown-toggle {
+                    color: #111111 !important;
+                    text-shadow: none !important;
+                }
+                
+                .navbar-collapse .nav-item {
+                    border-bottom: 1px solid #f0f0f0;
+                    padding: 0.5rem 0;
+                }
+                
+                .navbar-collapse .nav-item:last-child {
+                    border-bottom: none;
+                }
+                
+                .navbar-collapse .dropdown-menu {
+                    background-color: #f8f9fa;
+                    border: none;
+                    box-shadow: none;
+                }
+                
+                .navbar-collapse .dropdown-item {
+                    color: #111111 !important;
+                    padding: 0.5rem 1rem;
+                }
+                
+                .navbar-collapse .dropdown-item:hover {
+                    background-color: #e9ecef;
+                }
+                
+                /* Clean download brochure button in mobile navbar */
+                .navbar-collapse .d-lg-none {
+                    margin-top: 1rem;
+                    padding-top: 1rem;
+                    border-top: 1px solid #e9ecef;
+                }
+                
+                .navbar-collapse .d-lg-none .btn {
+                    background-color: #05aad3 !important;
+                    border: none !important;
+                    color: white !important;
+                    font-weight: 600;
+                    box-shadow: 0 2px 4px rgba(5, 170, 211, 0.3);
+                    transition: all 0.3s ease;
+                }
+                
+                .navbar-collapse .d-lg-none .btn:hover {
+                    background-color: #048bb5 !important;
+                    box-shadow: 0 4px 8px rgba(5, 170, 211, 0.4);
+                    transform: translateY(-1px);
+                }
+            }
         </style>
     </head>
 
@@ -71,12 +149,12 @@
         
 
         <!-- Navbar & Hero Start -->
-        <div class="container-fluid header-top rounded" style="margin-top: -5px;position: fixed;top: 0px;left: 0px;right: 0px;z-index: 9999;background-color: white;">
+        <div class="container-fluid header-top rounded transparent-navbar" style="position: fixed;top: 0px;left: 0px;right: 0px;z-index: 9999;">
             <div class="container">
                 <div class="nav-bar px-0 py-lg-0" style="height: 64px;">
                     <nav class="navbar navbar-expand-lg navbar-light justify-content-between" >
                         <a class="navbar-brand" href="#">
-                            <img src="img/logo.png" alt="Logo">
+                            <img src="img/logo.png" class="navbar-logo" alt="Logo">
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                             <span class="fa fa-bars"></span>
@@ -87,26 +165,15 @@
                                <b> <a href="about.html" class="nav-item nav-link">About</a></b>
                                <b> <a href="service.html" class="nav-item nav-link">Products</a></b>
                                <b> <a href="blog.html" class="nav-item nav-link">Machinery</a></b>
-                
-                               <b> <div class="nav-item dropdown">
-                                    <a href="#" class="nav-link" data-bs-toggle="dropdown">
-                                        <span class="dropdown-toggle">Pages</span>
-                                    </a>
-                                    <div class="dropdown-menu">
-                                        <a href="project.html" class="dropdown-item">Our projects</a>
-                                        <a href="team.html" class="dropdown-item">Our team</a>
-                                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                        <a href="404.html" class="dropdown-item">404 Page</a>
-                                    </div>
-                                </div></b>
+            
                                 <b><a href="#contact" class="nav-item nav-link">Contact</a></b>
                                 
-                                <div class="d-lg-none text-center py-3" style="width: 60%;">
+                                <div class="d-lg-none text-center py-3" style="width: 100%;">
                                     <a href="img/Bhagwati.pdf" class="btn btn-primary w-100 py-2" style="border-radius: 15px;" download>Download Brochure</a>
                                 </div>
                             </div>
                         </div>
-                                       <div class="d-none d-lg-block ms-3">
+                                       <div class="d-none d-lg-block ms-3" style="background-color: #05aad3; border-radius: 15px;">
                                    <a href="img/Bhagwati.pdf" class="btn btn-primary py-2 px-4" style="border-radius: 15px; white-space: nowrap;" download>Download Brochure</a>
                                </div>
                     </nav>
@@ -121,14 +188,15 @@
         <div class="header-carousel owl-carousel overflow-hidden">
             <div class="header-carousel-item hero-section">
                 <div class="hero-bg-half-1"></div>
+                <div class="hero-overlay"></div>
 
                 <div class="carousel-caption">
                     <div class="container" style="margin-top: 20px;">
                         <div class="row g-4 align-items-center">
                             <div class="col-lg-7 animated fadeInLeft">
                                 <div class="text-sm-center text-md-start">
-                                    <h4 class="text-white text-uppercase fw-bold mb-4" style="margin-top: 110px;">Shri Bhagwati Poly Pack</h4>
-                                    <h1 class="display-2 text-white mb-4" >Flexible Packaging Solutions for Every Industry</h1>
+                                    <h4 class="text-uppercase fw-normal mb-4" style="margin-top: 110px; color: #05aad3; border: 2px solid #05aad3; background-color: rgba(5, 170, 211, 0.15); display: inline-block; padding: 10px 24px; border-radius: 30px; font-size: 0.95rem; letter-spacing: 0.5px;"><b>Shri Bhagwati Poly Pack</b></h4>
+                                    <h1 class="display-2 text-white mb-4" >Flexible Packaging Solutions for <p style="color:#05aad3;">Every Industry</p></h1>
                                     <p class="mb-5 fs-5">Trusted by businesses since 1991. High-quality, custom-designed multilayer films and laminates that protect your product and enhance your brand 
                                     </p>
                                     <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">

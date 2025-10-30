@@ -117,7 +117,26 @@
     } else {
         $('.back-to-top').fadeOut('fast');
     }
+    
+    // Navbar transparency effect
+    if ($(this).scrollTop() > 100) {
+        $('.transparent-navbar').addClass('scrolled');
+        // Change logo to logo.png when navbar is white
+        $('.navbar-logo').attr('src', 'img/logo.png');
+    } else {
+        $('.transparent-navbar').removeClass('scrolled');
+        // Change logo to logo2.png when navbar is transparent
+        $('.navbar-logo').attr('src', 'img/logo2.png');
+    }
     });
+    
+    // Initialize logo based on initial scroll position
+    if ($(window).scrollTop() > 100) {
+        $('.navbar-logo').attr('src', 'img/logo.png');
+    } else {
+        $('.navbar-logo').attr('src', 'img/logo2.png');
+    }
+    
     $('.back-to-top').click(function (e) {
         e.preventDefault();
         $('html, body').animate({scrollTop : 0}, 300, 'easeInOutExpo');
@@ -126,4 +145,3 @@
 
 
 })(jQuery);
-

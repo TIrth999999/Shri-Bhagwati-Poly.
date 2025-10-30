@@ -150,6 +150,64 @@ body {
 }
 
 /*** Navbar Start ***/
+.transparent-navbar {
+    background-color: transparent !important;
+    transition: background-color 0.3s ease;
+}
+
+.transparent-navbar.scrolled {
+    background-color: white !important;
+}
+
+.transparent-navbar .nav-link,
+.transparent-navbar .navbar-nav .nav-item .nav-link,
+.transparent-navbar .dropdown-toggle,
+.transparent-navbar .nav-item .dropdown-menu .dropdown-item {
+    color: white !important;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5); /* Add text shadow for better visibility on transparent background */
+    transition: all 0.3s ease;
+}
+
+.transparent-navbar.scrolled .nav-link,
+.transparent-navbar.scrolled .navbar-nav .nav-item .nav-link,
+.transparent-navbar.scrolled .dropdown-toggle,
+.transparent-navbar.scrolled .nav-item .dropdown-menu .dropdown-item {
+    color: #111111 !important;
+    text-shadow: none; /* Remove text shadow when navbar is white */
+}
+
+.transparent-navbar .navbar-toggler {
+    border-color: white !important;
+}
+
+.transparent-navbar .navbar-toggler .fa-bars {
+    color: white !important;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5); /* Add text shadow for better visibility */
+}
+
+.transparent-navbar.scrolled .navbar-toggler {
+    border-color: #111111 !important;
+}
+
+.transparent-navbar.scrolled .navbar-toggler .fa-bars {
+    color: #111111 !important;
+    text-shadow: none; /* Remove text shadow when navbar is white */
+}
+
+.transparent-navbar .btn-primary {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    color: white !important;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5); /* Add text shadow for better visibility */
+}
+
+.transparent-navbar.scrolled .btn-primary {
+    background-color: #05aad3 !important;
+    border-color: #05aad3 !important;
+    color: white !important;
+    text-shadow: none; /* Remove text shadow when navbar is white */
+}
+
 .header-top .topbar .dropdown-toggle::after {
     border: none;
     content: "\f107";
@@ -410,6 +468,30 @@ body {
     /* background-color: rgba(0, 0, 0, 0.9); */
 }
 
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+background: linear-gradient(to right, 
+  rgba(0, 0, 0, 0.75) 0%, 
+  rgba(0, 0, 0, 0.65) 15%, 
+  rgba(0, 0, 0, 0.5) 30%, 
+  rgba(0, 0, 0, 0.25) 45%, 
+  rgba(0, 0, 0, 0) 60%, 
+  rgba(0, 0, 0, 0) 100%);
+
+    z-index: 1;
+}
+
+/* Mobile overlay - stronger gradient for better text readability */
+@media (max-width: 991px) {
+    .hero-overlay {
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.75) 30%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0) 90%);
+    }
+}
+
 .hero-bg-half-1 {
     /* background-image: url(../img/header-2.jpg); */
     clip-path: polygon(37% 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -485,7 +567,7 @@ body {
 
 /*** Carousel Hero Header Start ***/
 .header-carousel .header-carousel-item {
-    height: 700px;
+    height: 740px;
 }
 
 .header-carousel .owl-nav .owl-prev,
@@ -530,17 +612,49 @@ body {
     background: rgba(0, 0, 0, .2);
     display: flex;
     align-items: center;
-    z-index: 9;
+    z-index: 10;
+
 }
+
+/* .header-carousel .header-carousel-item .carousel-caption::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+}
+.header-carousel .header-carousel-item .carousel-caption p {
+    color: var(--bs-white);
+    font-size: 1.25rem;
+    line-height: 1.5;
+} */
 
 @media (max-width: 991px) {
     .header-carousel .header-carousel-item .carousel-caption {
         padding-top: 45px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     .header-carousel.owl-carousel,
     .header-carousel .header-carousel-item {
         height: 700px;
+    }
+    
+    .hero-section .carousel-caption .container {
+        margin-top: 0 !important;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 575px) {
+    .header-carousel.owl-carousel,
+    .header-carousel .header-carousel-item {
+        height: 700px;
+    }
+    
+    .header-carousel .header-carousel-item .carousel-caption {
+        padding-top: 30px;
     }
 }
 /*** Carousel Hero Header End ***/
