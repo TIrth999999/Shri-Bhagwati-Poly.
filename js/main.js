@@ -16,19 +16,29 @@
     new WOW().init();
 
 
-    // Header carousel
+    // Header carousel - static banner with clickable buttons
     $(".header-carousel").owlCarousel({
         autoplay: true,
         smartSpeed: 1500,
         items: 1,
-        dots: true,
-        loop: true,
-        nav: true,
-        navText: [
-            '<i class="bi bi-chevron-left"></i>',
-            '<i class="bi bi-chevron-right"></i>'
-        ],
-        autoplayTimeout: 10000, // Changed from default to 10 seconds
+        dots: false,
+        loop: false,
+        nav: false,
+        autoplayTimeout: 10000,
+        mouseDrag: false,
+        touchDrag: false,
+        pullDrag: false,
+        freeDrag: false,
+        rewind: false,
+        autoplayHoverPause: true
+    });
+    
+    // Prevent default touch actions that could cause dragging
+    $(".header-carousel").on('touchstart touchmove', function(e) {
+        if (e.type === 'touchstart' || e.type === 'touchmove') {
+            e.preventDefault();
+            e.stopPropagation();
+        }
     });
 
 
