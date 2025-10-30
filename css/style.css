@@ -151,12 +151,12 @@ body {
 
 /*** Navbar Start ***/
 .transparent-navbar {
-    background-color: transparent !important;
-    transition: background-color 0.3s ease;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 70%, transparent 100%) !important;
+    transition: all 0.3s ease;
 }
 
 .transparent-navbar.scrolled {
-    background-color: white !important;
+    background: white !important;
 }
 
 .transparent-navbar .nav-link,
@@ -456,7 +456,7 @@ body {
 
 /*** Carousel Hero Header Start ***/
 .hero-section {
-    background-image: url(../img/bg2.png);
+    background-image: url(../img/bg2.gif);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
