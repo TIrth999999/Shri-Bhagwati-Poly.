@@ -208,6 +208,160 @@ body {
     text-shadow: none; /* Remove text shadow when navbar is white */
 }
 
+/* Shining glass effect for Download Brochure button - Desktop only when navbar is transparent */
+@media (min-width: 992px) {
+    .transparent-navbar:not(.scrolled) .d-none.d-lg-block {
+        position: relative;
+        background: rgba(255, 255, 255, 0.1) !important;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(5, 170, 211, 0.3);
+        border-radius: 15px !important;
+        box-shadow: 0 8px 32px rgba(5, 170, 211, 0.2),
+                    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+                    0 4px 16px rgba(5, 170, 211, 0.3);
+        overflow: hidden;
+    }
+    
+    /* Continuous shine animation */
+    .transparent-navbar:not(.scrolled) .d-none.d-lg-block::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -100%;
+        width: 50%;
+        height: 200%;
+        background: linear-gradient(90deg, 
+            transparent, 
+            rgba(5, 170, 211, 0.4), 
+            rgba(255, 255, 255, 1), 
+            rgba(5, 170, 211, 0.4), 
+            transparent);
+        transform: skewX(-25deg);
+        animation: shine 3s infinite;
+        z-index: 1;
+    }
+    
+    /* Glass reflection effect */
+    .transparent-navbar:not(.scrolled) .d-none.d-lg-block::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 50%;
+        background: linear-gradient(180deg, 
+            rgba(255, 255, 255, 0.25) 0%, 
+            transparent 100%);
+        border-radius: 15px 15px 0 0;
+        pointer-events: none;
+        z-index: 2;
+    }
+    
+    .transparent-navbar:not(.scrolled) .d-none.d-lg-block .btn-primary {
+        background: linear-gradient(135deg, 
+            rgba(5, 170, 211, 0.8) 0%, 
+            rgba(5, 170, 211, 0.95) 100%) !important;
+        border: none !important;
+        position: relative;
+        z-index: 3;
+        transition: all 0.3s ease;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    .transparent-navbar:not(.scrolled) .d-none.d-lg-block{
+        transition: all 0.4s ;
+    }
+    .transparent-navbar:not(.scrolled) .d-none.d-lg-block:hover {
+        box-shadow: 0 12px 40px rgba(5, 170, 211, 0.35),
+                    0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+                    0 6px 20px rgba(5, 170, 211, 0.4);
+
+    }
+    
+    .transparent-navbar:not(.scrolled) .d-none.d-lg-block:hover .btn-primary {
+        background: linear-gradient(135deg, 
+            rgba(5, 170, 211, 0.9) 0%, 
+            rgba(5, 170, 211, 1) 100%) !important;
+    }
+    
+    @keyframes shine {
+        0% {
+            left: -100%;
+        }
+        100% {
+            left: 150%;
+        }
+    }
+}
+
+/* Animated text-to-icon transition for Download Brochure button - Desktop (all states) */
+@media (min-width: 992px) {
+    .brochure-btn-wrapper .brochure-btn {
+        position: relative;
+        overflow: hidden;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .brochure-btn .btn-text,
+    .brochure-btn .btn-icon {
+        transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        display: inline-flex;
+        align-items: center;
+    }
+    
+    .brochure-btn .btn-text {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    
+    .brochure-btn .btn-icon {
+        position: absolute;
+        opacity: 0;
+        transform: translateY(10px) scale(0.5);
+    }
+    
+    .brochure-btn .btn-icon i {
+        display: inline-block;
+        animation: icon-bounce 0s ease;
+    }
+    
+    .brochure-btn:hover .btn-text {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.5);
+    }
+    
+    .brochure-btn:hover .btn-icon {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    
+    .brochure-btn:hover .btn-icon i:first-child {
+        animation: icon-bounce 0.6s ease 0.1s;
+    }
+    
+    .brochure-btn:hover .btn-icon i:last-child {
+        animation: icon-bounce 0.6s ease 0.2s;
+    }
+    
+    @keyframes icon-bounce {
+        0%, 100% {
+            transform: translateY(0) rotate(0deg);
+        }
+        25% {
+            transform: translateY(-5px) rotate(-5deg);
+        }
+        50% {
+            transform: translateY(0) rotate(5deg);
+        }
+        75% {
+            transform: translateY(-3px) rotate(-3deg);
+        }
+    }
+}
+
 .header-top .topbar .dropdown-toggle::after {
     border: none;
     content: "\f107";
@@ -300,6 +454,8 @@ body {
     padding: 0;
     font-weight: 700;
     font-size: 1.05rem;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
 .navbar .navbar-nav .nav-item {
@@ -1175,10 +1331,295 @@ background: linear-gradient(to right,
 }
 
 .service-item{
+    border: 0px solid #05aad3;
     transition: 0.3s;
+    border-radius: 15px;
 }
 
 .service-item:hover{
     box-shadow: 0 0 20px rgba(0, 120, 189, 0.2);
     transform: translateY(-10px);
+}
+
+/* ===== Professional Navbar Link Hover Animation - Desktop Only - NEW APPROACH ===== */
+@media (min-width: 992px) {
+    /* Completely different approach - use border-bottom instead of ::after */
+    .navbar .navbar-nav a.nav-link {
+        position: relative !important;
+        text-decoration: none !important;
+        border: none !important;
+        border-bottom: 3px solid transparent !important;
+        padding-bottom: 0px !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    /* Remove ALL pseudo-elements completely */
+    .navbar .navbar-nav a.nav-link::before,
+    .navbar .navbar-nav a.nav-link::after,
+    .navbar .navbar-nav b::before,
+    .navbar .navbar-nav b::after {
+        content: none !important;
+        display: none !important;
+    }
+    
+    /* Hover effect - show border */
+    .navbar .navbar-nav a.nav-link:hover {
+        border-bottom-color: var(--bs-primary) !important;
+        transform: scale(1.05) !important;
+    }
+    
+    /* Active page - show border */
+    .navbar .navbar-nav a.nav-link.active {
+        border-bottom-color: var(--bs-primary) !important;
+    }
+    
+    /* Transparent navbar - white border */
+    .transparent-navbar:not(.scrolled) .navbar-nav a.nav-link:hover,
+    .transparent-navbar:not(.scrolled) .navbar-nav a.nav-link.active {
+        border-bottom-color: white !important;
+    }
+    
+    /* Scrolled navbar - primary color border */
+    .transparent-navbar.scrolled .navbar-nav a.nav-link:hover,
+    .transparent-navbar.scrolled .navbar-nav a.nav-link.active {
+        border-bottom-color: var(--bs-primary) !important;
+    }
+}
+
+/* ===== Mission & Vision Label Style - ENHANCED ===== */
+/* Mission - Coming from Left */
+.mission-label-wrapper {
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.mission-label {
+    background: linear-gradient(135deg, #05aad3 0%, #0492b8 50%, #05aad3 100%);
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 800;
+    padding: 20px 60px 20px 30px;
+    border-radius: 0 40px 40px 0;
+    margin-left: -30px;
+    box-shadow: 
+        8px 8px 25px rgba(5, 170, 211, 0.4),
+        inset 0 -3px 10px rgba(0, 0, 0, 0.1),
+        inset 0 3px 10px rgba(255, 255, 255, 0.3);
+    position: relative;
+    display: inline-block;
+    letter-spacing: 1px;
+    animation: slideInLeft 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    overflow: hidden;
+}
+
+/* Shine effect for mission label */
+.mission-label::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.5), 
+        transparent);
+    transform: skewX(-25deg);
+    animation: shine-mission 3s infinite;
+}
+
+/* Decorative icon - Target for Mission */
+.mission-label::after {
+    content: '\f140';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.mission-content {
+    padding-left: 40px;
+    max-width: 1000px;
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+.mission-content p {
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Vision - Coming from Right */
+.vision-label-wrapper {
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.vision-label {
+    background: linear-gradient(135deg, #05aad3 0%, #0492b8 50%, #05aad3 100%);
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 800;
+    padding: 20px 30px 20px 60px;
+    border-radius: 40px 0 0 40px;
+    margin-right: -30px;
+    box-shadow: 
+        -8px 8px 25px rgba(5, 170, 211, 0.4),
+        inset 0 -3px 10px rgba(0, 0, 0, 0.1),
+        inset 0 3px 10px rgba(255, 255, 255, 0.3);
+    position: relative;
+    display: inline-block;
+    letter-spacing: 1px;
+    animation: slideInRight 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    overflow: hidden;
+}
+
+/* Shine effect for vision label */
+.vision-label::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -100%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.5), 
+        transparent);
+    transform: skewX(-25deg);
+    animation: shine-vision 3s infinite;
+}
+
+/* Decorative icon - Star for Vision */
+.vision-label::after {
+    content: '\f005';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.vision-content {
+    padding-right: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    text-align: right;
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+.vision-content p {
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Keyframe animations */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes shine-mission {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+@keyframes shine-vision {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 150%;
+    }
+}
+
+/* Hover effects for extra engagement */
+/* .mission-label:hover,
+.vision-label:hover {
+    transform: scale(1.02);
+    box-shadow: 
+        10px 10px 30px rgba(5, 170, 211, 0.5),
+        inset 0 -3px 10px rgba(0, 0, 0, 0.15),
+        inset 0 3px 10px rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+} */
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .mission-label,
+    .vision-label {
+        font-size: 1.8rem;
+        padding: 15px 40px;
+        letter-spacing: 0.5px;
+    }
+    
+    .mission-label {
+        margin-left: 0;
+        border-radius: 20px;
+    }
+    
+    .vision-label {
+        margin-right: 0;
+        border-radius: 20px;
+    }
+    
+    .mission-content,
+    .vision-content {
+        padding: 0 20px;
+        text-align: center;
+    }
+    
+    .vision-label-wrapper,
+    .mission-label-wrapper {
+        justify-content: center;
+    }
+    
+    .mission-label::after,
+    .vision-label::after {
+        display: none;
+    }
 }
