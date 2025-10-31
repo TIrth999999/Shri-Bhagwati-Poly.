@@ -136,4 +136,59 @@
     });
 
 
+    // Product Card Hover Effects
+    $('.product-card').each(function() {
+        $(this).on('mouseenter', function() {
+            $(this).find('.product-card-image img').css({
+                'transform': 'scale(1.1) rotate(2deg)',
+                'transition': 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+            });
+            $(this).find('.product-card-overlay').css('opacity', '1');
+            $(this).find('.product-card-overlay-content').css({
+                'transform': 'scale(1) rotate(0deg)',
+                'transition': 'transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)'
+            });
+        }).on('mouseleave', function() {
+            $(this).find('.product-card-image img').css('transform', 'scale(1) rotate(0deg)');
+            $(this).find('.product-card-overlay').css('opacity', '0');
+            $(this).find('.product-card-overlay-content').css('transform', 'scale(0) rotate(-180deg)');
+        });
+    });
+
+    // Product Card Button Ripple Effect
+    $('.product-card-btn').on('click', function(e) {
+        var $button = $(this);
+        var $ripple = $('<span class="ripple"></span>');
+        
+        var size = Math.max($button.outerWidth(), $button.outerHeight());
+        var x = e.pageX - $button.offset().left - size / 2;
+        var y = e.pageY - $button.offset().top - size / 2;
+        
+        $ripple.css({
+            width: size,
+            height: size,
+            top: y + 'px',
+            left: x + 'px'
+        }).appendTo($button);
+        
+        setTimeout(function() {
+            $ripple.remove();
+        }, 600);
+    });
+
+    // Smooth scroll animation for product section
+    $(window).on('scroll', function() {
+        $('.product-card-animate').each(function() {
+            var elementTop = $(this).offset().top;
+            var elementBottom = elementTop + $(this).outerHeight();
+            var viewportTop = $(window).scrollTop();
+            var viewportBottom = viewportTop + $(window).height();
+            
+            if (elementBottom > viewportTop && elementTop < viewportBottom) {
+                $(this).addClass('animated');
+            }
+        });
+    });
+
+
 })(jQuery);
