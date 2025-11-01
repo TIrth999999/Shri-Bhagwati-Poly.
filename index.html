@@ -134,7 +134,6 @@
         rel="stylesheet">
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="img/bg2.mp4" as="video" type="video/mp4">
     <link rel="preload" href="img/bg2.png" as="image">
 
     <!-- Icon Font Stylesheet -->
@@ -349,8 +348,8 @@
     <!-- Carousel Start -->
     <div class="header-carousel owl-carousel overflow-hidden">
         <div class="header-carousel-item hero-section">
-            <!-- Video Background -->
-            <video class="hero-video-bg" autoplay muted loop playsinline preload="metadata" poster="img/bg2.png">
+            <!-- Video Background - Load asynchronously -->
+            <video class="hero-video-bg" autoplay muted loop playsinline preload="auto" poster="img/bg2.png" id="heroVideo">
                 <source src="img/bg2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -415,7 +414,7 @@
                 </div>
                 <div class="col-lg-5 wow fadeInRight" data-wow-delay="0.2s">
                     <div class="position-relative h-100">
-                        <img src="img/main-client.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="">
+                        <img src="img/main-client.jpg" loading="lazy" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="">
                         <div class="bg-white">
                             <div class="position-absolute pt-3 bg-white" style="width: 50%; left: 0; bottom: 0;">
                                 <div class="bg-primary p-4">
@@ -425,7 +424,7 @@
                             </div>
                             <div class="position-absolute p-3 bg-white pb-0 pe-0"
                                 style="width: 50%; bottom: 0; right: 0;">
-                                <img src="img/client-half.png" class="img-fluid" alt="">
+                                <img src="img/client-half.png" loading="lazy" class="img-fluid" alt="">
                             </div>
                         </div>
                     </div>
@@ -1145,6 +1144,30 @@
 
         window.addEventListener('load', adjustCarouselSpeed);
         window.addEventListener('resize', adjustCarouselSpeed);
+    </script>
+
+    <!-- Video Auto-play Script -->
+    <script>
+        // Ensure video plays automatically
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('heroVideo');
+            if (video) {
+                // Force play video on page load
+                video.play().catch(function(error) {
+                    console.log('Video autoplay prevented:', error);
+                    // If autoplay is blocked, try again on user interaction
+                    document.addEventListener('click', function() {
+                        video.play();
+                    }, { once: true });
+                });
+                
+                // Ensure video loops properly
+                video.addEventListener('ended', function() {
+                    video.currentTime = 0;
+                    video.play();
+                });
+            }
+        });
     </script>
 
 </body>

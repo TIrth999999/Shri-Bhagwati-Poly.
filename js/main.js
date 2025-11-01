@@ -1,13 +1,13 @@
 (function ($) {
     "use strict";
 
-    // Spinner
+    // Spinner - Hide immediately when DOM is ready, don't wait for images
     var spinner = function () {
         setTimeout(function () {
             if ($('#spinner').length > 0) {
                 $('#spinner').removeClass('show');
             }
-        }, 1);
+        }, 100); // Very short delay just to show smooth transition
     };
     spinner(0);
     
@@ -186,6 +186,16 @@
             
             if (elementBottom > viewportTop && elementTop < viewportBottom) {
                 $(this).addClass('animated');
+            }
+        });
+    });
+
+    // Add lazy loading to all images for better performance
+    $(document).ready(function() {
+        // Add loading="lazy" to all images that don't have it
+        $('img').each(function() {
+            if (!$(this).attr('loading')) {
+                $(this).attr('loading', 'lazy');
             }
         });
     });
