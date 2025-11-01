@@ -415,12 +415,14 @@
                 }
                 
                 .product-img-wrapper {
-                    height: 220px;
+                    height: 200px;
                 }
                 
                 .product-img-wrapper img {
                     object-fit: contain;
                     padding: 15px;
+                    width: 100%;
+                    height: 100%;
                 }
                 
                 .product-title {
@@ -430,6 +432,43 @@
                 .page-link {
                     width: 40px;
                     height: 40px;
+                }
+                
+                .product-grid-card {
+                    margin-bottom: 20px;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .product-img-wrapper {
+                    height: 180px;
+                }
+                
+                .product-img-wrapper img {
+                    padding: 10px;
+                }
+                
+                .product-title {
+                    font-size: 1.1rem;
+                }
+                
+                .product-features {
+                    font-size: 0.9rem;
+                }
+            }
+            
+            /* Custom 5-column grid for 10 products */
+            .col-lg-2-4 {
+                position: relative;
+                width: 100%;
+                padding-right: 15px;
+                padding-left: 15px;
+            }
+            
+            @media (min-width: 992px) {
+                .col-lg-2-4 {
+                    flex: 0 0 20%;
+                    max-width: 20%;
                 }
             }
         </style>
@@ -545,20 +584,20 @@
                 <!-- Products Grid -->
                 <div class="row g-4" id="productsContainer">
                     <!-- Product 1: Stand-Up Pouches -->
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-3 col-md-6 product-item wow fadeInUp" data-wow-delay="0.1s" data-page="1">
                         <div class="product-grid-card">
                             <div class="product-img-wrapper">
-                                <img src="img/Products/p1.png" alt="Stand-Up Pouches">
+                                <img src="img/Products/p11.png" alt="Stand-Up Pouches" loading="lazy">
                                 <span class="product-badge">Custom Made</span>
                             </div>
                             <div class="product-content">
-                                <h3 class="product-title">Stand-Up Pouches</h3>
+                                <h3 class="product-title">Standup pouches</h3>
                                 <ul class="product-features">
-                                    <li>Custom sizes available</li>
+                                    <li>Self-standing design</li>
+                                    <li>Custom printing options</li>
                                     <li>Food-grade materials</li>
-                                    <li>Rotogravure printing</li>
                                 </ul>
-                                <a href="https://wa.me/9825034757?text=Hi, I would like to get a quote for Stand-Up Pouches" target="_blank" class="quote-btn">
+                                <a href="https://wa.me/9825034757?text=Hi, I would like to get a quote for Standup pouches" target="_blank" class="quote-btn">
                                     <i class="fab fa-whatsapp"></i>
                                     Request Quote
                                 </a>
@@ -567,20 +606,20 @@
                     </div>
 
                     <!-- Product 2: Window Pouches -->
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="col-lg-3 col-md-6 product-item wow fadeInUp" data-wow-delay="0.2s" data-page="1">
                         <div class="product-grid-card">
                             <div class="product-img-wrapper">
-                                <img src="img/Products/p2.png" alt="Window Pouches">
+                                <img src="img/Products/p22.png" alt="Window Pouches" loading="lazy">
                                 <span class="product-badge">Custom Made</span>
                             </div>
                             <div class="product-content">
-                                <h3 class="product-title">Window Pouches</h3>
+                                <h3 class="product-title">Window metlise</h3>
                                 <ul class="product-features">
-                                    <li>Clear visibility window</li>
-                                    <li>Moisture resistant</li>
-                                    <li>Multi-color printing</li>
+                                    <li>Metalized film window</li>
+                                    <li>Product visibility</li>
+                                    <li>Moisture barrier</li>
                                 </ul>
-                                <a href="https://wa.me/9825034757?text=Hi, I would like to get a quote for Window Pouches" target="_blank" class="quote-btn">
+                                <a href="https://wa.me/9825034757?text=Hi, I would like to get a quote for Window metlise" target="_blank" class="quote-btn">
                                     <i class="fab fa-whatsapp"></i>
                                     Request Quote
                                 </a>
@@ -589,20 +628,20 @@
                     </div>
 
                     <!-- Product 3: Zipper Pouches -->
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="col-lg-3 col-md-6 product-item wow fadeInUp" data-wow-delay="0.3s" data-page="1">
                         <div class="product-grid-card">
                             <div class="product-img-wrapper">
-                                <img src="img/Products/p3.png" alt="Zipper Pouches">
+                                <img src="img/Products/p33.png" alt="Zipper Pouches" loading="lazy">
                                 <span class="product-badge">Custom Made</span>
                             </div>
                             <div class="product-content">
-                                <h3 class="product-title">Zipper Pouches</h3>
+                                <h3 class="product-title">Zipper</h3>
                                 <ul class="product-features">
-                                    <li>Resealable zip lock</li>
-                                    <li>Barrier protection</li>
+                                    <li>Resealable closure</li>
+                                    <li>Easy opening</li>
                                     <li>Custom branding</li>
                                 </ul>
-                                <a href="https://wa.me/9825034757?text=Hi, I would like to get a quote for Zipper Pouches" target="_blank" class="quote-btn">
+                                <a href="https://wa.me/9825034757?text=Hi, I would like to get a quote for Zipper" target="_blank" class="quote-btn">
                                     <i class="fab fa-whatsapp"></i>
                                     Request Quote
                                 </a>
@@ -611,20 +650,20 @@
                     </div>
 
                     <!-- Product 4: Flexible Packaging -->
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="col-lg-3 col-md-6 product-item wow fadeInUp" data-wow-delay="0.4s" data-page="1">
                         <div class="product-grid-card">
                             <div class="product-img-wrapper">
-                                <img src="img/Products/p4.png" alt="Flexible Packaging">
+                                <img src="img/Products/p44.png" alt="Flexible Packaging" loading="lazy">
                                 <span class="product-badge">Custom Made</span>
                             </div>
                             <div class="product-content">
-                                <h3 class="product-title">Flexible Packaging</h3>
+                                <h3 class="product-title">Tear notches</h3>
                                 <ul class="product-features">
-                                    <li>Multi-layer lamination</li>
-                                    <li>High barrier properties</li>
-                                    <li>ISO certified quality</li>
+                                    <li>Easy-open feature</li>
+                                    <li>Precision perforation</li>
+                                    <li>Controlled opening</li>
                                 </ul>
-                                <a href="https://wa.me/9825034757?text=Hi, I would like to get a quote for Flexible Packaging" target="_blank" class="quote-btn">
+                                <a href="https://wa.me/9825034757?text=Hi, I would like to get a quote for Tear notches" target="_blank" class="quote-btn">
                                     <i class="fab fa-whatsapp"></i>
                                     Request Quote
                                 </a>
@@ -633,20 +672,20 @@
                     </div>
 
                     <!-- Product 5: Spice Packaging -->
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-3 col-md-6 product-item wow fadeInUp" data-wow-delay="0.1s" data-page="2" style="display: none;">
                         <div class="product-grid-card">
                             <div class="product-img-wrapper">
-                                <img src="img/Products/p1.png" alt="Spice Packaging">
+                                <img src="img/Products/p55.png" alt="Spice Packaging" loading="lazy">
                                 <span class="product-badge">Custom Made</span>
                             </div>
                             <div class="product-content">
-                                <h3 class="product-title">Spice Packaging</h3>
+                                <h3 class="product-title">Laser scoring</h3>
                                 <ul class="product-features">
-                                    <li>Aroma lock technology</li>
-                                    <li>FSSAI approved</li>
-                                    <li>Tamper-proof sealing</li>
+                                    <li>Precision laser cut</li>
+                                    <li>Clean tear lines</li>
+                                    <li>Custom patterns</li>
                                 </ul>
-                                <a href="https://wa.me/9825034757?text=Hi, I would like to get a quote for Spice Packaging" target="_blank" class="quote-btn">
+                                <a href="https://wa.me/9825034757?text=Hi, I would like to get a quote for Laser scoring" target="_blank" class="quote-btn">
                                     <i class="fab fa-whatsapp"></i>
                                     Request Quote
                                 </a>
@@ -655,20 +694,20 @@
                     </div>
 
                     <!-- Product 6: Atta/Flour Packaging -->
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="col-lg-3 col-md-6 product-item wow fadeInUp" data-wow-delay="0.2s" data-page="2" style="display: none;">
                         <div class="product-grid-card">
                             <div class="product-img-wrapper">
-                                <img src="img/Products/p2.png" alt="Atta Flour Packaging">
+                                <img src="img/Products/p66.png" alt="Atta Flour Packaging" loading="lazy">
                                 <span class="product-badge">Custom Made</span>
                             </div>
                             <div class="product-content">
-                                <h3 class="product-title">Atta/Flour Packaging</h3>
+                                <h3 class="product-title">Round punched holes</h3>
                                 <ul class="product-features">
-                                    <li>Heavy-duty strength</li>
-                                    <li>Easy tear notches</li>
-                                    <li>Custom sizes: 1-50 kg</li>
+                                    <li>Round hole punching</li>
+                                    <li>Easy hanging display</li>
+                                    <li>Custom hole sizes</li>
                                 </ul>
-                                <a href="https://wa.me/9825034757?text=Hi, I would like to get a quote for Atta/Flour Packaging" target="_blank" class="quote-btn">
+                                <a href="https://wa.me/9825034757?text=Hi, I would like to get a quote for Round punched holes" target="_blank" class="quote-btn">
                                     <i class="fab fa-whatsapp"></i>
                                     Request Quote
                                 </a>
@@ -677,20 +716,20 @@
                     </div>
 
                     <!-- Product 7: Namkeen Packaging -->
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="col-lg-3 col-md-6 product-item wow fadeInUp" data-wow-delay="0.3s" data-page="2" style="display: none;">
                         <div class="product-grid-card">
                             <div class="product-img-wrapper">
-                                <img src="img/Products/p3.png" alt="Namkeen Packaging">
+                                <img src="img/Products/p77.png" alt="Namkeen Packaging" loading="lazy">
                                 <span class="product-badge">Custom Made</span>
                             </div>
                             <div class="product-content">
-                                <h3 class="product-title">Namkeen Packaging</h3>
+                                <h3 class="product-title">Rounded Corners</h3>
                                 <ul class="product-features">
-                                    <li>High barrier films</li>
-                                    <li>Extended shelf life</li>
-                                    <li>Eye-catching designs</li>
+                                    <li>Soft rounded edges</li>
+                                    <li>Enhanced durability</li>
+                                    <li>Premium finish</li>
                                 </ul>
-                                <a href="https://wa.me/9825034757?text=Hi, I would like to get a quote for Namkeen Packaging" target="_blank" class="quote-btn">
+                                <a href="https://wa.me/9825034757?text=Hi, I would like to get a quote for Rounded Corners" target="_blank" class="quote-btn">
                                     <i class="fab fa-whatsapp"></i>
                                     Request Quote
                                 </a>
@@ -699,20 +738,64 @@
                     </div>
 
                     <!-- Product 8: Building Material Packaging -->
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="col-lg-3 col-md-6 product-item wow fadeInUp" data-wow-delay="0.4s" data-page="2" style="display: none;">
                         <div class="product-grid-card">
                             <div class="product-img-wrapper">
-                                <img src="img/Products/p4.png" alt="Building Material Packaging">
+                                <img src="img/Products/p88.png" alt="Building Material Packaging" loading="lazy">
                                 <span class="product-badge">Custom Made</span>
                             </div>
                             <div class="product-content">
-                                <h3 class="product-title">Building Material Packaging</h3>
+                                <h3 class="product-title">Punched out handles</h3>
                                 <ul class="product-features">
-                                    <li>Heavy-duty construction</li>
-                                    <li>Weather resistant</li>
-                                    <li>UV protection available</li>
+                                    <li>Die-cut handles</li>
+                                    <li>Ergonomic grip</li>
+                                    <li>Reinforced edges</li>
                                 </ul>
-                                <a href="https://wa.me/9825034757?text=Hi, I would like to get a quote for Building Material Packaging" target="_blank" class="quote-btn">
+                                <a href="https://wa.me/9825034757?text=Hi, I would like to get a quote for Punched out handles" target="_blank" class="quote-btn">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Request Quote
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 9: Rice Packaging -->
+                    <div class="col-lg-3 col-md-6 product-item wow fadeInUp" data-wow-delay="0.1s" data-page="3" style="display: none;">
+                        <div class="product-grid-card">
+                            <div class="product-img-wrapper">
+                                <img src="img/Products/p99.png" alt="Rice Packaging" loading="lazy">
+                                <span class="product-badge">Custom Made</span>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="product-title">Side gusset Handle</h3>
+                                <ul class="product-features">
+                                    <li>Side expansion feature</li>
+                                    <li>Carry handle option</li>
+                                    <li>Increased capacity</li>
+                                </ul>
+                                <a href="https://wa.me/9825034757?text=Hi, I would like to get a quote for Side gusset Handle" target="_blank" class="quote-btn">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Request Quote
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 10: Tea Packaging -->
+                    <div class="col-lg-3 col-md-6 product-item wow fadeInUp" data-wow-delay="0.2s" data-page="3" style="display: none;">
+                        <div class="product-grid-card">
+                            <div class="product-img-wrapper">
+                                <img src="img/Products/p111.png" alt="Tea Packaging" loading="lazy">
+                                <span class="product-badge">Custom Made</span>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="product-title">Matt coating pouch</h3>
+                                <ul class="product-features">
+                                    <li>Matt finish surface</li>
+                                    <li>Premium tactile feel</li>
+                                    <li>Scratch resistant</li>
+                                </ul>
+                                <a href="https://wa.me/9825034757?text=Hi, I would like to get a quote for Matt coating pouch" target="_blank" class="quote-btn">
                                     <i class="fab fa-whatsapp"></i>
                                     Request Quote
                                 </a>
@@ -729,9 +812,9 @@
                                 <i class="fas fa-chevron-left"></i>
                             </a>
                         </li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item active" data-page="1"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item" data-page="2"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item" data-page="3"><a class="page-link" href="#">3</a></li>
                         <li class="page-item">
                             <a class="page-link" href="#">
                                 <i class="fas fa-chevron-right"></i>
@@ -758,9 +841,55 @@
                                     </div>
                                     <h3 style="color: #2c3e50; font-weight: 700; font-size: 1.8rem; margin: 0;">Food Packaging</h3>
                                 </div>
-                                <p style="color: #6c757d; font-size: 1.05rem; line-height: 1.8; margin: 0;">
+                                <p style="color: #6c757d; font-size: 1.05rem; line-height: 1.8; margin-bottom: 25px;">
                                     Using certified food-grade materials, we package everything from powders (Atta, spices) and grains (rice, poha) to snacks (namkeen, dry fruits) and frozen goods (ice cream wrappers).
                                 </p>
+                                
+                                <!-- Food Items Heading -->
+                                <div style="background: linear-gradient(135deg, #05aad3 0%, #048bb5 100%); color: white; padding: 12px 20px; border-radius: 8px; margin-bottom: 20px;">
+                                    <h4 style="margin: 0; font-size: 1.1rem; font-weight: 600;">Packaging In Food Items Material</h4>
+                                    <p style="margin: 5px 0 0 0; font-size: 0.9rem; opacity: 0.95;">(All Certified Food Grade Materials Is Used)</p>
+                                </div>
+                                
+                                <!-- Food Items List -->
+                                <ul style="list-style: none; padding: 0; margin: 0;">
+                                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #2c3e50; font-size: 1rem; display: flex; align-items: start;">
+                                        <i class="fas fa-check-circle" style="color: #05aad3; margin-right: 12px; margin-top: 4px; font-size: 1.1rem;"></i>
+                                        <span>Atta Pouch 5kg To 25kg / Besan/maida / Ravo / Etc.</span>
+                                    </li>
+                                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #2c3e50; font-size: 1rem; display: flex; align-items: start;">
+                                        <i class="fas fa-check-circle" style="color: #05aad3; margin-right: 12px; margin-top: 4px; font-size: 1.1rem;"></i>
+                                        <span>Spices (powder & Hard Form)</span>
+                                    </li>
+                                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #2c3e50; font-size: 1rem; display: flex; align-items: start;">
+                                        <i class="fas fa-check-circle" style="color: #05aad3; margin-right: 12px; margin-top: 4px; font-size: 1.1rem;"></i>
+                                        <span>Tea Pouch</span>
+                                    </li>
+                                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #2c3e50; font-size: 1rem; display: flex; align-items: start;">
+                                        <i class="fas fa-check-circle" style="color: #05aad3; margin-right: 12px; margin-top: 4px; font-size: 1.1rem;"></i>
+                                        <span>Ice Cream Wrapper</span>
+                                    </li>
+                                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #2c3e50; font-size: 1rem; display: flex; align-items: start;">
+                                        <i class="fas fa-check-circle" style="color: #05aad3; margin-right: 12px; margin-top: 4px; font-size: 1.1rem;"></i>
+                                        <span>Namkeen / Wafer Wrapper (Nitrogen Base)</span>
+                                    </li>
+                                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #2c3e50; font-size: 1rem; display: flex; align-items: start;">
+                                        <i class="fas fa-check-circle" style="color: #05aad3; margin-right: 12px; margin-top: 4px; font-size: 1.1rem;"></i>
+                                        <span>Khari / Toast</span>
+                                    </li>
+                                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #2c3e50; font-size: 1rem; display: flex; align-items: start;">
+                                        <i class="fas fa-check-circle" style="color: #05aad3; margin-right: 12px; margin-top: 4px; font-size: 1.1rem;"></i>
+                                        <span>Mamra / Poha</span>
+                                    </li>
+                                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #2c3e50; font-size: 1rem; display: flex; align-items: start;">
+                                        <i class="fas fa-check-circle" style="color: #05aad3; margin-right: 12px; margin-top: 4px; font-size: 1.1rem;"></i>
+                                        <span>Rice Pouch</span>
+                                    </li>
+                                    <li style="padding: 10px 0; color: #2c3e50; font-size: 1rem; display: flex; align-items: start;">
+                                        <i class="fas fa-check-circle" style="color: #05aad3; margin-right: 12px; margin-top: 4px; font-size: 1.1rem;"></i>
+                                        <span>Dry Fruit Pouch</span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
 
@@ -773,9 +902,67 @@
                                     </div>
                                     <h3 style="color: #2c3e50; font-weight: 700; font-size: 1.8rem; margin: 0;">Non-Food & Construction</h3>
                                 </div>
-                                <p style="color: #6c757d; font-size: 1.05rem; line-height: 1.8; margin: 0;">
+                                <p style="color: #6c757d; font-size: 1.05rem; line-height: 1.8; margin-bottom: 25px;">
                                     We also create durable packaging for non-food items like incense sticks and rubber bands, as well as tough, reliable pouches for building and construction materials like cable ties, switch boxes, and roll plugs.
                                 </p>
+                                
+                                <!-- Non-Food Items Heading -->
+                                <div style="background: linear-gradient(135deg, #05aad3 0%, #048bb5 100%); color: white; padding: 12px 20px; border-radius: 8px; margin-bottom: 20px;">
+                                    <h4 style="margin: 0; font-size: 1.1rem; font-weight: 600;">Packaging In Non Food Material</h4>
+                                </div>
+                                
+                                <!-- Non-Food Items List -->
+                                <ul style="list-style: none; padding: 0; margin: 0;">
+                                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #2c3e50; font-size: 1rem; display: flex; align-items: start;">
+                                        <i class="fas fa-check-circle" style="color: #05aad3; margin-right: 12px; margin-top: 4px; font-size: 1.1rem;"></i>
+                                        <span>Agarbatti Pouch</span>
+                                    </li>
+                                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #2c3e50; font-size: 1rem; display: flex; align-items: start;">
+                                        <i class="fas fa-check-circle" style="color: #05aad3; margin-right: 12px; margin-top: 4px; font-size: 1.1rem;"></i>
+                                        <span>Chuno Pouch</span>
+                                    </li>
+                                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #2c3e50; font-size: 1rem; display: flex; align-items: start;">
+                                        <i class="fas fa-check-circle" style="color: #05aad3; margin-right: 12px; margin-top: 4px; font-size: 1.1rem;"></i>
+                                        <span>Rubber Band Pouch</span>
+                                    </li>
+                                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #2c3e50; font-size: 1rem; display: flex; align-items: start;">
+                                        <i class="fas fa-check-circle" style="color: #05aad3; margin-right: 12px; margin-top: 4px; font-size: 1.1rem;"></i>
+                                        <span>Paper Pouch</span>
+                                    </li>
+                                </ul>
+                                
+                                <!-- Building & Construction Heading -->
+                                <div style="background: linear-gradient(135deg, #05aad3 0%, #048bb5 100%); color: white; padding: 12px 20px; border-radius: 8px; margin: 25px 0 20px 0;">
+                                    <h4 style="margin: 0; font-size: 1.1rem; font-weight: 600;">Packaging In Building & Construction Material</h4>
+                                </div>
+                                
+                                <!-- Building Items List -->
+                                <ul style="list-style: none; padding: 0; margin: 0;">
+                                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #2c3e50; font-size: 1rem; display: flex; align-items: start;">
+                                        <i class="fas fa-check-circle" style="color: #05aad3; margin-right: 12px; margin-top: 4px; font-size: 1.1rem;"></i>
+                                        <span>Cable Tie Pouch</span>
+                                    </li>
+                                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #2c3e50; font-size: 1rem; display: flex; align-items: start;">
+                                        <i class="fas fa-check-circle" style="color: #05aad3; margin-right: 12px; margin-top: 4px; font-size: 1.1rem;"></i>
+                                        <span>Sedel Pouch All Size</span>
+                                    </li>
+                                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #2c3e50; font-size: 1rem; display: flex; align-items: start;">
+                                        <i class="fas fa-check-circle" style="color: #05aad3; margin-right: 12px; margin-top: 4px; font-size: 1.1rem;"></i>
+                                        <span>Switch & Box Pouch</span>
+                                    </li>
+                                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #2c3e50; font-size: 1rem; display: flex; align-items: start;">
+                                        <i class="fas fa-check-circle" style="color: #05aad3; margin-right: 12px; margin-top: 4px; font-size: 1.1rem;"></i>
+                                        <span>Cable Wire Pouch</span>
+                                    </li>
+                                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #2c3e50; font-size: 1rem; display: flex; align-items: start;">
+                                        <i class="fas fa-check-circle" style="color: #05aad3; margin-right: 12px; margin-top: 4px; font-size: 1.1rem;"></i>
+                                        <span>Moduler Switch & Box Plate</span>
+                                    </li>
+                                    <li style="padding: 10px 0; color: #2c3e50; font-size: 1rem; display: flex; align-items: start;">
+                                        <i class="fas fa-check-circle" style="color: #05aad3; margin-right: 12px; margin-top: 4px; font-size: 1.1rem;"></i>
+                                        <span>Roll Plug Pouch</span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -783,6 +970,34 @@
             </div>
         </div>
         <!-- Products Grid End -->
+
+        <!-- All Products Showcase Section -->
+        <div class="container-fluid py-5" style="background: white;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+                        <div style="padding: 40px;">
+                            <h2 style="color: #2c3e50; font-weight: 700; font-size: 2.5rem; margin-bottom: 20px;">Complete Packaging Solutions</h2>
+                            <p style="color: #6c757d; font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+                                We offer a comprehensive range of flexible packaging solutions designed to meet diverse industry needs. From food-grade pouches to industrial packaging, our products combine innovation, quality, and sustainability.
+                            </p>
+                            <p style="color: #6c757d; font-size: 1.05rem; line-height: 1.8; margin-bottom: 30px;">
+                                With over 30 years of expertise in manufacturing, our ISO-certified facility produces premium packaging materials including stand-up pouches, zipper bags, window pouches, and custom flexible packaging for food, construction, and industrial applications.
+                            </p>
+                            <a href="contact.html" class="btn btn-primary py-3 px-5" style="border-radius: 8px; font-size: 1.1rem;">
+                                <i class="fas fa-phone-alt me-2"></i>Get in Touch
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
+                        <div style="padding: 20px;">
+                            <img src="img/all.png" alt="Complete Packaging Solutions" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- All Products Showcase End -->
 
         <!-- Footer Start -->
         <div class="container-fluid footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
@@ -883,11 +1098,62 @@
         
         <!-- Pagination Script -->
         <script>
-            // Simple pagination functionality
+            // AJAX Pagination - No page reload
             document.addEventListener('DOMContentLoaded', function() {
-                const paginationLinks = document.querySelectorAll('.pagination .page-link');
+                var currentPage = 1;
+                var totalPages = 3;
+                var isInitialLoad = true;
                 
-                paginationLinks.forEach(link => {
+                // Function to show products for specific page
+                function showPage(pageNum, shouldScroll) {
+                    // Hide all products
+                    document.querySelectorAll('.product-item').forEach(function(item) {
+                        item.style.display = 'none';
+                    });
+                    
+                    // Show products for selected page
+                    document.querySelectorAll('.product-item[data-page="' + pageNum + '"]').forEach(function(item) {
+                        item.style.display = 'block';
+                    });
+                    
+                    // Update pagination UI
+                    document.querySelectorAll('.pagination .page-item').forEach(function(item) {
+                        item.classList.remove('active', 'disabled');
+                    });
+                    
+                    // Set active page
+                    var activePageItem = document.querySelector('.pagination .page-item[data-page="' + pageNum + '"]');
+                    if (activePageItem) {
+                        activePageItem.classList.add('active');
+                    }
+                    
+                    // Disable prev button on first page
+                    if (pageNum === 1) {
+                        document.querySelector('.pagination .page-item:first-child').classList.add('disabled');
+                    }
+                    
+                    // Disable next button on last page
+                    if (pageNum === totalPages) {
+                        document.querySelector('.pagination .page-item:last-child').classList.add('disabled');
+                    }
+                    
+                    // Smooth scroll to products section (only if not initial load)
+                    if (shouldScroll && !isInitialLoad) {
+                        var productsContainer = document.getElementById('productsContainer');
+                        if (productsContainer) {
+                            window.scrollTo({
+                                top: productsContainer.offsetTop - 120,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                    
+                    currentPage = pageNum;
+                }
+                
+                // Click handlers for pagination
+                var paginationLinks = document.querySelectorAll('.pagination .page-link');
+                paginationLinks.forEach(function(link) {
                     link.addEventListener('click', function(e) {
                         e.preventDefault();
                         
@@ -896,23 +1162,32 @@
                             return;
                         }
                         
-                        // Remove active class from all items
-                        document.querySelectorAll('.pagination .page-item').forEach(item => {
-                            item.classList.remove('active');
-                        });
+                        var pageItem = this.parentElement;
                         
-                        // Add active class to clicked item (if it's not prev/next)
-                        if (!this.querySelector('i')) {
-                            this.parentElement.classList.add('active');
+                        // Check if it's prev/next button or page number
+                        if (this.querySelector('i.fa-chevron-left')) {
+                            // Previous button
+                            if (currentPage > 1) {
+                                showPage(currentPage - 1, true);
+                            }
+                        } else if (this.querySelector('i.fa-chevron-right')) {
+                            // Next button
+                            if (currentPage < totalPages) {
+                                showPage(currentPage + 1, true);
+                            }
+                        } else {
+                            // Page number button
+                            var pageNum = parseInt(pageItem.getAttribute('data-page'));
+                            if (pageNum && !isNaN(pageNum)) {
+                                showPage(pageNum, true);
+                            }
                         }
-                        
-                        // Scroll to top of products
-                        document.querySelector('.products-container').scrollIntoView({ 
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
                     });
                 });
+                
+                // Initialize - show first page without scrolling
+                showPage(1, false);
+                isInitialLoad = false;
             });
         </script>
     </body>
